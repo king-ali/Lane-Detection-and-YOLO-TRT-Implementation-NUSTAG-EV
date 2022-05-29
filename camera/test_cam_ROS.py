@@ -1,5 +1,4 @@
 import cv2
-#import cv_bridge
 from sensor_msgs.msg import Image
 import rospy
 import numpy as np
