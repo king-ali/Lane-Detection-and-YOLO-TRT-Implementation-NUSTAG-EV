@@ -1,13 +1,8 @@
-#!/usr/bin/env python2.7
-# -*- coding: utf-8 -*
 import rospy
 from sensor_msgs.msg import Image
 import cv2
-
 import matplotlib.pyplot as plt
 import numpy as np
-
-#from scipy.stats import itemfreq
 
 
 class Camera:
@@ -31,14 +26,18 @@ class Camera:
     def display_image(self):
           
         if self.image_L is not None:
-            plt.subplot(1,2,1)
-            plt.cla()
-            plt.imshow(self.image_L,cmap = 'gray')
-            plt.subplot(1,2,2)
-            plt.cla()
-            plt.imshow(self.image_R,cmap = 'gray')
+#             plt.subplot(1,2,1)
+#             plt.cla()
+#             plt.imshow(self.image_L,cmap = 'gray')
+            cv2.imshow('left', self.image_L)
+#             plt.subplot(1,2,2)
+#             plt.cla()
+#             plt.imshow(self.image_R,cmap = 'gray')
+            cv2.imshow('Right', self.image_R)
+            cv2.waitKey(1)
+    
         
-            plt.pause(0.01)
+#             plt.pause(0.01)
 
 if __name__ == '__main__':
     try:
