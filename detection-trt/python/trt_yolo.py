@@ -1,9 +1,3 @@
-"""trt_yolo_mjpeg.py
-
-MJPEG version of trt_yolo.py.
-"""
-
-
 import os
 import time
 import argparse
@@ -19,15 +13,10 @@ from utils.mjpeg import MjpegServer
 from utils.yolo_with_plugins import TrtYOLO
 
 
-# cam = cv2.VideoCapture('4.mp4')
-# frame_width = int(cam.get(3))
-# frame_height = int(cam.get(4))
-# out = cv2.VideoWriter('yoloout4.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 20, (frame_width,frame_height))
-
 
 def parse_args():
     """Parse input arguments."""
-    desc = 'MJPEG version of trt_yolo'
+    desc = 'trt_yolo'
     parser = argparse.ArgumentParser(description=desc)
     parser = add_camera_args(parser)
     parser.add_argument(
@@ -51,13 +40,6 @@ def parse_args():
 
 def loop_and_detect(cam, trt_yolo, conf_th, vis, mjpeg_server):
     """Continuously capture images from camera and do object detection.
-
-    # Arguments
-      cam: the camera instance (video source).
-      trt_yolo: the TRT YOLO object detector instance.
-      conf_th: confidence/score threshold for object detection.
-      vis: for visualization.
-      mjpeg_server
     """
     fps = 0.0
     tic = time.time()
@@ -90,8 +72,9 @@ def main():
     if not os.path.isfile('yolo/%s.trt' % args.model):
         raise SystemExit('ERROR: file (yolo/%s.trt) not found!' % args.model)
 
-    # cam = Camera(args)
-    cam = cv2.VideoCapture('3.mp4')
+  
+    cam = cv2.VideoCapture(0)
+    
     if not cam.isOpened():
         raise SystemExit('ERROR: failed to open camera!')
 
@@ -100,7 +83,7 @@ def main():
     trt_yolo = TrtYOLO(args.model, args.category_num, args.letter_box)
 
     mjpeg_server = MjpegServer(port=args.mjpeg_port)
-    print('MJPEG server started...')
+    print('server started...')
     try:
         loop_and_detect(cam, trt_yolo, conf_th=0.3, vis=vis,
                         mjpeg_server=mjpeg_server)
