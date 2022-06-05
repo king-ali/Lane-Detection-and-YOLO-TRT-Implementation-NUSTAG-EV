@@ -1,7 +1,8 @@
-# Yolo TensorRT Implementation
+# Lane Assistance and Yolo TensorRT Implementation
 
 
-![](./configs/result.jpg)
+![](./configs/DUR1.png)
+
 
 ## INTRODUCTION
 
