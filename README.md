@@ -1,7 +1,7 @@
 # Lane Detection and Yolo TensorRT Implementation
 
 
-![](./detection-trt/configs/DUR1.png)
+![](./detection-trt/configs/car1.PNG)
 
 
 
@@ -41,6 +41,7 @@ On ubuntu press ctr+shift+T it will open new terminal then run
 
 ## For Traffic sign
 
+![](./detection-trt/configs/DUR1.png)
 
 ```bash
 rosrun yolo-trt sample
