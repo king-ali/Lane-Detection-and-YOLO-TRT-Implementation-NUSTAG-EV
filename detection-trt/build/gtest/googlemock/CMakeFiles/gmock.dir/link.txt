@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC  -std=c++14 -O3 -Wno-write-strings  -shared -Wl,-soname,libgmock.so -o libgmock.so CMakeFiles/gmock.dir/__/googletest/src/gtest-all.cc.o CMakeFiles/gmock.dir/src/gmock-all.cc.o  -L/usr/local/cuda-10.2/lib64 -Wl,-rpath,/usr/local/cuda-10.2/lib64 -lpthread 
