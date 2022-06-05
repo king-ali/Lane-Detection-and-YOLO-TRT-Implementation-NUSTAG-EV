@@ -1,7 +1,6 @@
 #include "class_timer.hpp"
 #include "class_detector.h"
 #include "opencv2/opencv.hpp"
-//#include <mutex>
 #include <queue>
 #include <ros/ros.h>
 #include <cv_bridge/cv_bridge.h>
