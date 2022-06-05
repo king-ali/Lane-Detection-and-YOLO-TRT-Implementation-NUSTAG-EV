@@ -108,7 +108,7 @@ This folder contain code for lane detection. Steering angle is then given to ste
 
 ![](./detection-trt/configs/car.PNG)
 ![](./detection-trt/configs/lane.PNG)
-![](./detection-trt/configs/steering.PNG)
+
 
 
 
