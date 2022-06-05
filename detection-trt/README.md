@@ -1,26 +1,21 @@
-# Yolov5 Yolov4 Yolov3 TensorRT Implementation
+# Yolo TensorRT Implementation
 
-![GitHub stars](https://img.shields.io/github/stars/enazoe/yolo-tensorrt) ![GitHub forks](https://img.shields.io/github/forks/enazoe/yolo-tensorrt)  ![GitHub watchers](https://img.shields.io/github/watchers/enazoe/yolo-tensorrt)  [![Gitter](https://badges.gitter.im/yolo-tensorrt/community.svg)](https://gitter.im/yolo-tensorrt/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-__news:__ 2021.06.04:yolov5-v5.0 support
 
 ![](./configs/result.jpg)
+
 ## INTRODUCTION
 
-The project is the encapsulation  of nvidia official yolo-tensorrt [implementation](https://github.com/NVIDIA-AI-IOT/deepstream_reference_apps). And you must have the trained yolo model(__.weights__) and __.cfg__ file from the darknet (yolov3 & yolov4). For the [yolov5](https://github.com/ultralytics/yolov5) ,you should prepare the model file (yolov5s.yaml) and the trained weight file (yolov5s.pt) from pytorch.
+This is implementation of yolo with tensorrt inference. Model is trained on custom dataset of traffic light and signs and it is converted into tensorrt.
 
-![](./configs/yolo-trt.png)
+## Traffic sign and light detection
+You can download the weights from here
+Extract these weights at configs folder
+open terminal 
 
-- [x] yolov5s , yolov5m , yolov5l , yolov5x ,yolov5-p6 [tutorial](yolov5_tutorial.md)
-- [x] yolov4 , yolov4-tiny
-- [x] yolov3 , yolov3-tiny
 
-## Features
-
-- [x] inequal net width and height
-- [x] batch inference
-- [x] support FP32,FP16,INT8
-- [ ] dynamic input size
+```bash
+rosrun yolo-trt sample
+```
 
 
 ## PLATFORM & BENCHMARK
@@ -95,51 +90,14 @@ The project generate the __libdetector.so__ lib, and the sample code.
 
 
 ```bash
-git clone https://github.com/enazoe/yolo-tensorrt.git
-cd yolo-tensorrt/
+git clone https://github.com/king-ali/VISION-TAG.git
+cd VISION-TAG/
+cd detection-trt/
 mkdir build
 cd build/
 cmake ..
 make
 ./yolo-trt
-```
-## API
-
-```c++
-struct Config
-{
-	std::string file_model_cfg = "configs/yolov4.cfg";
-
-	std::string file_model_weights = "configs/yolov4.weights";
-
-	float detect_thresh = 0.9;
-
-	ModelType net_type = YOLOV4;
-
-	Precision inference_precison = INT8;
-	
-	int gpu_id = 0;
-
-	std::string calibration_image_list_file_txt = "configs/calibration_images.txt";
-
-};
-
-class API Detector
-{
-public:
-	explicit Detector();
-	~Detector();
-
-	void init(const Config &config);
-
-	void detect(const std::vector<cv::Mat> &mat_image,std::vector<BatchResult> &vec_batch_result);
-
-private:
-	Detector(const Detector &);
-	const Detector &operator =(const Detector &);
-	class Impl;
-	Impl *_impl;
-};
 ```
 
 ## REFERENCE
@@ -150,5 +108,3 @@ private:
 
 ## Contact
 
-qq group id 2: 672431649
-qq group id 1: 1151955802
