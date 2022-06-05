@@ -1,0 +1,8 @@
+prefix=/home/brain/MYNT-EYE-S-SDK/wrappers/ros/src/yolo-tensorrt/build/devel
+
+Name: yolo-trt
+Description: Description of yolo-trt
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
