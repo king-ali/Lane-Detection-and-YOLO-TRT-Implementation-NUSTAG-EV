@@ -2,6 +2,8 @@
 
 
 ![](./detection-trt/configs/DUR1.png)
+![](./detection-trt/configs/lane.PNG)
+![](./detection-trt/configs/car.PNG)
 
 
 ## INTRODUCTION
