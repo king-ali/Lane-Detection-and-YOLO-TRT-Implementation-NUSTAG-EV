@@ -7,9 +7,15 @@
 
 ## INTRODUCTION
 
-This is implementation of yolo with tensorrt inference. Model is trained on custom dataset for traffic light and signs and it is converted into tensorrt.
+This repository contain code of lane keeping and object detection for project of Autonomous Electric vehicle. NVIDIA Jetson AGX Xavier development kit is used as brain of vehicle to run algorithms real time.
+
+
+For object detection model is trained on custom dataset for traffic light and signs and it is converted into tensorrt.
+
 For custom weights
 You can download the weights from [here](https://drive.google.com/file/d/15nYbuOBKZOzV1vgfJg0BxAlFs4H3DKKE/view?usp=sharing) and extract it at detection-trt/configs
+
+
 For object yolov4 python object detection 
 You can download the weights from [here](https://drive.google.com/file/d/1nNhS6VZmRGZN_uMCZdX7R7aQRhV8ksul/view?usp=sharing) and extract it at detection-trt/python/yolo
 
