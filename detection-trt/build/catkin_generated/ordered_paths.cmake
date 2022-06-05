@@ -1,1 +1,0 @@
-set(ORDERED_PATHS "/home/brain/MYNT-EYE-S-SDK/wrappers/ros/devel/lib;/opt/ros/melodic/lib")
