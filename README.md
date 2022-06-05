@@ -106,9 +106,8 @@ This folder contain code for lane detection. Steering angle is then given to ste
 
 ## REFERENCE
 
-- https://github.com/wang-xinyu/tensorrtx/tree/master/yolov4
+
 - https://github.com/jkjung-avt/tensorrt_demos
 - https://github.com/enazoe/yolo-tensorrt
 - https://github.com/OanaGaskey/Advanced-Lane-Detection
-- https://github.com/mj8ac/trt-yolo-app_win64
 - https://github.com/NVIDIA-AI-IOT/deepstream_reference_apps
