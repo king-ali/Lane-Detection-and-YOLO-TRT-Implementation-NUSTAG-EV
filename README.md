@@ -1,9 +1,11 @@
 # Lane Assistance and Yolo TensorRT Implementation
 
 
-![](.detection-trt/configs/DUR1.png)
+![](./detection-trt/configs/DUR1.png)
+![](./configs/DUR1.png)
 
 ![](VISION-TAG/detection-trt/configs/DUR1.png)
+
 ## INTRODUCTION
 
 This is implementation of yolo with tensorrt inference. Model is trained on custom dataset for traffic light and signs and it is converted into tensorrt.
