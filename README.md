@@ -1,9 +1,8 @@
-# Lane Assistance and Yolo TensorRT Implementation
+# Lane Detection and Yolo TensorRT Implementation
 
 
 ![](./detection-trt/configs/DUR1.png)
-![](./detection-trt/configs/lane.PNG)
-![](./detection-trt/configs/car.PNG)
+
 
 
 ## INTRODUCTION
@@ -49,6 +48,11 @@ rosrun yolo-trt signal
 
 ## For Object detection YOLOV4 Python
 
+
+
+![](./detection-trt/configs/detect.PNG)
+
+
 ```bash
 cd ${HOME}/VISION-TAG/detection-trt/python/
 ./install_pycuda.sh
@@ -92,6 +96,11 @@ python3 onnx_to_tensorrt.py -m yolov4-416
 cd ${HOME}/VISION-TAG/lane detection/
 python3 lane_finder.py
 ```
+
+This folder contain code for lane detection. Steering angle is then given to stepper motor through serial communication with arduino
+
+![](./detection-trt/configs/car.PNG)
+![](./detection-trt/configs/lane.PNG)
 
 
 
