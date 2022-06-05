@@ -1,7 +1,7 @@
 # Lane Assistance and Yolo TensorRT Implementation
 
 
-![](./configs/DUR1.png)
+![](.detection-trt/configs/DUR1.png)
 
 
 ## INTRODUCTION
