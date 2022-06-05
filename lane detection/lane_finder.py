@@ -472,7 +472,6 @@ class LaneFinder:
 app = Flask(__name__)
 
 camera = cv2.VideoCapture(0)  # use 0 for web camera
-#  for cctv camera use rtsp://username:password@ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp' instead of camera
 
 starttime = time.time()
 def gen_frames():  # generate frame by frame from camera
@@ -493,37 +492,17 @@ def gen_frames():  # generate frame by frame from camera
     output_dir = "output_images"
 
 
-    #for image_file in os.listdir(input_dir):
-    #        if image_file.endswith("jpg"):
-    #            # turn images to grayscale and find chessboard corners
-    #            img = mpimg.imread(os.path.join(input_dir, image_file))
-    #            lf = LaneFinder(settings.ORIGINAL_SIZE, settings.UNWARPED_SIZE, cam_matrix, dist_coeffs,
-    #                perspective_transform, pixels_per_meter, "warning.png")
-    #            img = lf.process_image(img, True, show_period=1, blocking=False)
 
-
-    #video_files = ['hardest.mp4']
-    #output_path = "output_videos"
-    #for file in video_files:
-
-    #print("camera matrix",cam_matrix)
-    #print("dist_coeffs",dist_coeffs)
-    #print("perspective_transform",perspective_transform)
-    #print("pixels_per_meter",pixels_per_meter)
 
     lf = LaneFinder(settings.ORIGINAL_SIZE, settings.UNWARPED_SIZE, cam_matrix, dist_coeffs,
                 perspective_transform, pixels_per_meter, "/media/brain/Data/AV/Test Vehicle/warning.png")
-    #output = os.path.join(output_path,"lane_"+file)
-    #clip2 = VideoFileClip(file)
-    #cam = cv2.VideoCapture(0)
-    
+  
     #### Uncomment for serial interface
     # ser = serial.Serial('/dev/ttyUSB0', 115200)    #encoder
     # sys.stdout.flush()
     # hw = HW_Interface(ser,0.05)
     
-    #when class gets data from the Arduino, it will call the my_callback function
-    #hw.register_callback(lf.my_callback)
+
     i = 0
     #num_frames = 10000    
     #count = 0
@@ -535,8 +514,7 @@ def gen_frames():  # generate frame by frame from camera
         img = lf.process_image(frame,reset=False, show_period=0)
         dim = (int(img.shape[1]*0.21),int(img.shape[0]*0.55))
         img = cv2.resize(img,dim)
-        # cv2.imshow("",img)
-        # cv2.waitKey(1)
+
  
         #  Uncomment to Steer
         gain = 15
