@@ -2,9 +2,7 @@
 
 
 ![](./detection-trt/configs/DUR1.png)
-![](./configs/DUR1.png)
 
-![](VISION-TAG/detection-trt/configs/DUR1.png)
 
 ## INTRODUCTION
 
